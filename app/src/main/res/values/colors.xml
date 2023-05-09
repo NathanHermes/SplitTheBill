@@ -2,4 +2,26 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="zinc_50">#fafafa</color>
+    <color name="zinc_100">#f4f4f5</color>
+    <color name="zinc_200">#e4e4e7</color>
+    <color name="zinc_300">#d4d4d8</color>
+    <color name="zinc_400">#a1a1aa</color>
+    <color name="zinc_500">#71717a</color>
+    <color name="zinc_600">#52525b</color>
+    <color name="zinc_700">#3f3f46</color>
+    <color name="zinc_800">#27272a</color>
+    <color name="zinc_900">#18181b</color>
+
+    <color name="medium_purple_50">#f4f4fe</color>
+    <color name="medium_purple_100">#edeafd</color>
+    <color name="medium_purple_200">#ddd8fc</color>
+    <color name="medium_purple_300">#c3b9f9</color>
+    <color name="medium_purple_400">#a492f3</color>
+    <color name="medium_purple_500">#8665ed</color>
+    <color name="medium_purple_600">#8257e5</color>
+    <color name="medium_purple_700">#6533ce</color>
+    <color name="medium_purple_800">#542aad</color>
+    <color name="medium_purple_900">#47248e</color>
 </resources>
