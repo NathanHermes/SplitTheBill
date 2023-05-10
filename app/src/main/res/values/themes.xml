@@ -1,8 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.SplitTheBill" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.SplitTheBill" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/medium_purple_500</item>
+        <item name="colorPrimaryVariant">@color/medium_purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
 
     <style name="Theme.SplitTheBill" parent="Base.Theme.SplitTheBill" />
