@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/personNameTv"
+            android:id="@+id/nameTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nathan Hermes"
@@ -20,7 +20,7 @@
             android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/personProductsTv"
+            android:id="@+id/productsTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Coca-cola e fanta"
