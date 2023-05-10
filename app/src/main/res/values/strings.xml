@@ -3,4 +3,6 @@
     <string name="title_home">Lista de integrantes</string>
     <string name="subtitle_home">Gerencie todos os integrantes existentes ou adicione um novo integrante.</string>
     <string name="btn_add_person">Add integrante</string>
+
+    <string name="menu_item_description">Adicionar integrante</string>
 </resources>
