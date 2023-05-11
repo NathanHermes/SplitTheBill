@@ -1,7 +1,7 @@
 package br.edu.ifsp.scl.pdm.splitthebill.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -12,7 +12,7 @@ import br.edu.ifsp.scl.pdm.splitthebill.adapter.PersonAdapter
 import br.edu.ifsp.scl.pdm.splitthebill.databinding.ActivityMainBinding
 import br.edu.ifsp.scl.pdm.splitthebill.model.Person
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
   private val activityMainBinding: ActivityMainBinding by lazy {
     ActivityMainBinding.inflate(layoutInflater)
   }
@@ -30,9 +30,17 @@ class MainActivity : AppCompatActivity() {
     with(activityMainBinding) {
       peopleLv.adapter = personAdapter
 
-      personActivityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
-        println(result)
-      }
+      personActivityResultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+
+          if (result.resultCode == RESULT_OK) {
+            val person = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+              result.data?.getParcelableExtra(EXTRA_NEW_PERSON, Person::class.java)
+            } else {
+              result.data?.getParcelableExtra(EXTRA_NEW_PERSON)
+            }
+          }
+        }
 
       registerForContextMenu(peopleLv)
     }
