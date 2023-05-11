@@ -2,6 +2,7 @@ package br.edu.ifsp.scl.pdm.splitthebill.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.core.widget.addTextChangedListener
@@ -16,6 +17,9 @@ class PersonActivity : BaseActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(activityPersonBinding.root)
+
+    val people = intent.getParcelableExtra(EXTRA_PEOPLE)
+    Log.i("PEOPLE", people.toString())
 
     with(activityPersonBinding) {
       nameEt.addTextChangedListener { text ->

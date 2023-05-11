@@ -3,6 +3,7 @@ package br.edu.ifsp.scl.pdm.splitthebill.view
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -73,6 +74,7 @@ class MainActivity : BaseActivity() {
     return when (item.itemId) {
       R.id.addPersonMi -> {
         val personIntent = Intent(this, PersonActivity::class.java)
+        personIntent.putExtra(EXTRA_PEOPLE, people as Parcelable)
         personActivityResultLauncher.launch(personIntent)
         true
       }
