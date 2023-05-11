@@ -22,7 +22,6 @@
             android:id="@+id/productsTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Coca-cola e fanta"
             android:fontFamily="@font/inter"
             android:textColor="@color/zinc_700"
             android:textSize="16sp"/>
@@ -36,7 +35,6 @@
             android:id="@+id/productPrinceTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="R$00,00"
             android:fontFamily="@font/inter_bold"
             android:textColor="@color/zinc_900"
             android:textSize="20sp"
