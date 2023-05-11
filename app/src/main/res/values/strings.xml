@@ -5,4 +5,14 @@
     <string name="btn_calculate_split">Calcular racha</string>
 
     <string name="menu_item_description">Adicionar integrante</string>
+
+    <string name="title_person">Cadastro de Integrante</string>
+    <string name="name_tv">Nome*</string>
+    <string name="name_et">ex.: Pedro Nobile</string>
+    <string name="total_value_tv">Valor total*</string>
+    <string name="total_value_et">ex.: 190.00</string>
+    <string name="purchased_items_tv">Itens comprados*</string>
+    <string name="purchased_items_et">ex.: Batata frita, Cheetos, Coca-cola</string>
+    <string name="back_bt">Voltar</string>
+    <string name="save_bt">Salvar</string>
 </resources>
