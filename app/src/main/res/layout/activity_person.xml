@@ -80,7 +80,7 @@
             android:background="@drawable/rounded_corner"
             android:fontFamily="@font/inter"
             android:hint="@string/total_value_et"
-            android:inputType="text"
+            android:inputType="numberDecimal"
             android:padding="12dp"
             android:textColor="@color/zinc_900"
             android:textColorHint="@color/zinc_500"
@@ -121,6 +121,19 @@
             android:textColor="@color/zinc_900"
             android:textColorHint="@color/zinc_500"
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/purchasedItemsAlertTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="8dp"
+            android:text="@string/purchased_items_alert_tv"
+            android:textColor="@color/red_600"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -156,6 +169,6 @@
             android:text="@string/save_bt"
             android:textAllCaps="false"
             android:textSize="16sp"
-            tools:ignore="ButtonStyle"/>
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
