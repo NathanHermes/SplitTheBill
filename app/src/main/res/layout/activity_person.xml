@@ -51,6 +51,18 @@
             android:textColor="@color/zinc_900"
             android:textColorHint="@color/zinc_500"
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/nameAlertTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="8dp"
+            android:text="@string/name_alert_tv"
+            android:textColor="@color/red_600"
+            android:textSize="16sp"
+            android:visibility="gone" />
     </LinearLayout>
 
     <LinearLayout
