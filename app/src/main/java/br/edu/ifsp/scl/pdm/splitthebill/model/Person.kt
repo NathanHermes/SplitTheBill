@@ -10,6 +10,6 @@ import kotlinx.parcelize.Parcelize
 data class Person(
   @PrimaryKey(autoGenerate = true) val id: Int?,
   var name: String,
-  var totalSpent: Float,
+  var totalValue: Float,
   var purchasedItems: String,
 ): Parcelable
