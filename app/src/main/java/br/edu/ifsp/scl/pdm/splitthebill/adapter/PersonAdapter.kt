@@ -28,7 +28,7 @@ class PersonAdapter(context: Context, private val people: MutableList<Person>) :
       val tilePersonViewHolder = TilePersonViewHolder(
         tilePersonView.findViewById(R.id.nameTv),
         tilePersonView.findViewById(R.id.productsTv),
-        tilePersonView.findViewById(R.id.productPrinceTv)
+        tilePersonView.findViewById(R.id.totalValueTv)
       )
 
       tilePersonView.tag = tilePersonViewHolder
@@ -37,7 +37,7 @@ class PersonAdapter(context: Context, private val people: MutableList<Person>) :
     with(tilePersonView.tag as TilePersonViewHolder) {
       nameTv.text = person.name
       productsTv.text = person.purchasedItems
-      productPrinceTv.text = person.totalSpent.toString()
+      totalValueTv.text = person.totalValue.toString()
     }
 
     return tilePersonView
@@ -46,6 +46,6 @@ class PersonAdapter(context: Context, private val people: MutableList<Person>) :
   private data class TilePersonViewHolder(
     val nameTv: TextView,
     val productsTv: TextView,
-    val productPrinceTv: TextView
+    val totalValueTv: TextView
   )
 }
