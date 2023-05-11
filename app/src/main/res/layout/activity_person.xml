@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zinc_50"
+    android:padding="12dp"
+    tools:context=".view.PersonActivity">
+
+    <TextView
+        android:id="@+id/titlePersonTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_black"
+        android:text="@string/title_person"
+        android:textColor="@color/zinc_900"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/nameLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titlePersonTv">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/name_tv"
+            android:textColor="@color/zinc_900"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/nameEt"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:autofillHints="name"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/inter"
+            android:hint="@string/name_et"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@color/zinc_900"
+            android:textColorHint="@color/zinc_500"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalValueLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameLl">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/total_value_tv"
+            android:textColor="@color/zinc_900"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/totalValueEt"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:autofillHints="name"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/inter"
+            android:hint="@string/total_value_et"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@color/zinc_900"
+            android:textColorHint="@color/zinc_500"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/purchasedItemsLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalValueLl">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/purchased_items_tv"
+            android:textColor="@color/zinc_900"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/purchasedItemsEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/inter"
+            android:gravity="top"
+            android:hint="@string/purchased_items_et"
+            android:inputType="textMultiLine"
+            android:lines="12"
+            android:padding="12dp"
+            android:textColor="@color/zinc_900"
+            android:textColorHint="@color/zinc_500"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonsLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/backBt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/zinc_50"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/back_bt"
+            android:textAllCaps="false"
+            android:textColor="@color/medium_purple_500"
+            android:textSize="16sp"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/saveBt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/save_bt"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            tools:ignore="ButtonStyle"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
