@@ -73,6 +73,13 @@ class MainActivity : BaseActivity() {
           personIntent.putExtra(EXTRA_VIEW_PERSON, true)
           personActivityResultLauncher.launch(personIntent)
         }
+
+      splitCalculateBt.setOnClickListener {
+        val peopleList = ArrayList<Person>(people)
+        val splitIntent = Intent(this@MainActivity, SplitActivity::class.java)
+        splitIntent.putParcelableArrayListExtra(EXTRA_PEOPLE, peopleList)
+        startActivity(splitIntent)
+      }
     }
   }
 
