@@ -12,4 +12,4 @@ data class Person(
   var name: String,
   var value: Float?,
   var items: String?,
-): Parcelable
+) : Parcelable
