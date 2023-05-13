@@ -128,7 +128,6 @@
             android:gravity="top"
             android:hint="@string/purchased_items_et"
             android:inputType="textMultiLine"
-            android:minLines="4"
             android:padding="12dp"
             android:textColor="@color/zinc_900"
             android:textColorHint="@color/zinc_500"
