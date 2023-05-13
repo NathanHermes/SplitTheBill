@@ -18,6 +18,9 @@
 
     <string name="purchased_items_tv">Itens comprados</string>
     <string name="purchased_items_et">ex.: Batata frita, Cheetos, Coca-cola</string>
+    <string name="purchased_items_alert_tv">Preencha o campo valor total primeiro.</string>
+    <string name="purchased_items_blank_alert_tv">Campo obrigatório.</string>
+
     <string name="back_bt">Voltar</string>
 
     <string name="save_bt">Salvar</string>
