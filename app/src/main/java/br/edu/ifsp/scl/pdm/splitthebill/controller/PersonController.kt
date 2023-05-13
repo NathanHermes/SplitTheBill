@@ -5,6 +5,7 @@ import br.edu.ifsp.scl.pdm.splitthebill.model.Person
 import br.edu.ifsp.scl.pdm.splitthebill.model.PersonDAO
 import br.edu.ifsp.scl.pdm.splitthebill.model.PersonDAORoom
 import br.edu.ifsp.scl.pdm.splitthebill.view.MainActivity
+import kotlinx.coroutines.*
 
 class PersonController(private val mainActivity: MainActivity) {
   private val personDAOImpl: PersonDAO = Room.databaseBuilder(
@@ -14,19 +15,46 @@ class PersonController(private val mainActivity: MainActivity) {
   ).build().getPersonDAO()
 
   fun findAllPeople() {
-    Thread {
-      val people = personDAOImpl.findAll()
-      mainActivity.runOnUiThread {
+    CoroutineScope(Dispatchers.IO).launch {
+      val result = async { personDAOImpl.findAll() }
+      val people = result.await()
+
+      withContext(Dispatchers.Main) {
         mainActivity.updatePeople(people)
       }
-    }.start()
+    }
   }
 
-  fun createPerson(person: Person) {
-    Thread {
-      personDAOImpl.create(person)
-      findAllPeople()
-    }.start()
+  fun createPerson(_person: Person) {
+    CoroutineScope(Dispatchers.IO).launch {
+      val result = async { personDAOImpl.create(_person) }
+      result.await()
 
+      withContext(Dispatchers.Main) {
+        findAllPeople()
+      }
+    }
+  }
+
+  fun updatePerson(_person: Person) {
+    CoroutineScope(Dispatchers.IO).launch {
+      val result = async { personDAOImpl.update(_person) }
+      result.await()
+
+      withContext(Dispatchers.Main) {
+        findAllPeople()
+      }
+    }
+  }
+
+  fun deletePerson(_person: Person) {
+    CoroutineScope(Dispatchers.IO).launch {
+      val result = async { personDAOImpl.delete(_person) }
+      result.await()
+
+      withContext(Dispatchers.Main) {
+        findAllPeople()
+      }
+    }
   }
 }
