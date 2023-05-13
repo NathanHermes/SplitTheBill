@@ -48,8 +48,10 @@ class MainActivity : BaseActivity() {
             person?.let { _person ->
               val position = people.indexOfFirst { it.id == _person.id }
 
-              if (positon != -1) {
-
+              if (position != -1) {
+                people[position] = _person
+                personController.updatePerson(_person)
+                Toast.makeText(this@MainActivity, "Integrante atualizado", Toast.LENGTH_LONG).show()
               } else {
                 personController.createPerson(_person)
                 Toast.makeText(this@MainActivity, "Integrante adicionado.", Toast.LENGTH_LONG)
