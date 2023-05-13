@@ -84,7 +84,38 @@ class PersonActivity : BaseActivity() {
           else totalValueEt.text.toString().toFloat()
         val purchasedItems: String = purchasedItemsEt.text.toString()
 
-      return Person(null, name, totalValue, purchasedItems)
+        return Person(id, name, totalValue, purchasedItems)
+      }
+    }
+    return null
+  }
+
+  private fun setValuesIntoView(person: Person) {
+    val viewPerson = intent.getBooleanExtra(EXTRA_VIEW_PERSON, false)
+    with(activityPersonBinding) {
+      if (viewPerson) {
+        nameEt.hint = person.name
+
+        val strongTotalValue = "R$${person.value.toString()}"
+        totalValueEt.hint = strongTotalValue.replace(".", ",")
+
+        purchasedItemsEt.hint = person.items
+      } else {
+        nameEt.setText(person.name)
+
+        if (person.value == null) {
+          totalValueEt.setText("")
+        } else {
+          totalValueEt.setText(person.value.toString())
+        }
+
+        purchasedItemsEt.setText(person.items)
+      }
+      nameEt.isEnabled = !viewPerson
+      totalValueEt.isEnabled = !viewPerson
+      purchasedItemsEt.isEnabled = !viewPerson
+
+      saveBt.visibility = if (viewPerson) GONE else VISIBLE
     }
   }
 }
