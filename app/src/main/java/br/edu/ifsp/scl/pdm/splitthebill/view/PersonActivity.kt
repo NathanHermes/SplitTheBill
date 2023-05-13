@@ -59,11 +59,27 @@ class PersonActivity : BaseActivity() {
         val person: Person? = getValueFromView(receivePerson?.id)
 
         if (person != null) {
-          val resultIntent = Intent()
-          resultIntent.putExtra(EXTRA_PERSON, person)
+          val receivePeople =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+              intent.getParcelableArrayListExtra(EXTRA_PEOPLE, Person::class.java)
+            } else {
+              intent.getParcelableArrayListExtra(EXTRA_PEOPLE)
+            }
 
-          setResult(RESULT_OK, resultIntent)
-          finish()
+          val position = receivePeople?.let { _people ->
+            _people.indexOfFirst { it.name == person.name }
+          }
+
+          if (position != -1) {
+            nameAlertTv.setText(R.string.name_exists_alert_tv)
+            nameAlertTv.visibility = VISIBLE
+          } else {
+            val resultIntent = Intent()
+            resultIntent.putExtra(EXTRA_PERSON, person)
+
+            setResult(RESULT_OK, resultIntent)
+            finish()
+          }
         }
       }
     }
