@@ -24,6 +24,8 @@
     <string name="back_bt">Voltar</string>
 
     <string name="save_bt">Salvar</string>
-    <string name="name_alert_tv">Campo obrigatório.</string>
-    <string name="purchased_items_alert_tv">Preencha o campo valor total primeiro.</string>
+    <string name="edit_person_mi">Editar integrante</string>
+    <string name="delete_person_mi">Deletar integrante</string>
+    <string name="title_split_resume_tv">Resultado do racha</string>
+
 </resources>
