@@ -40,9 +40,9 @@ class MainActivity : BaseActivity() {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
           if (result.resultCode == RESULT_OK) {
             val person = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-              result.data?.getParcelableExtra(EXTRA_NEW_PERSON, Person::class.java)
+              result.data?.getParcelableExtra(EXTRA_PERSON, Person::class.java)
             } else {
-              result.data?.getParcelableExtra(EXTRA_NEW_PERSON)
+              result.data?.getParcelableExtra(EXTRA_PERSON)
             }
 
             person?.let { _person ->
