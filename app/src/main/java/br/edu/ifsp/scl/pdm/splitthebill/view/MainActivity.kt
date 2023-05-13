@@ -102,6 +102,14 @@ class MainActivity : BaseActivity() {
     }
   }
 
+  override fun onCreateContextMenu(
+    menu: ContextMenu?,
+    v: View?,
+    menuInfo: ContextMenu.ContextMenuInfo?
+  ) {
+    menuInflater.inflate(R.menu.context_menu_main, menu)
+  }
+
   fun updatePeople(_people: MutableList<Person>) {
     people.clear()
     people.addAll(_people)
