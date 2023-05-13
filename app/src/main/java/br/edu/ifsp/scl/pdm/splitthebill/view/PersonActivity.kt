@@ -74,15 +74,15 @@ class PersonActivity : BaseActivity() {
       if (nameEt.text.isBlank()) {
         nameAlertTv.setText(R.string.name_blank_alert_tv)
         nameAlertTv.visibility = VISIBLE
-        return null
-      }
-
-      val totalValue: Float =
-        if (totalValueEt.text.isBlank()) 0F
-        else totalValueEt.text.toString().toFloat()
-
-      val name: String = nameEt.text.toString()
-      val purchasedItems: String = purchasedItemsEt.text.toString()
+      } else if (totalValueEt.text.isNotBlank() && purchasedItemsEt.text.isBlank()) {
+        purchasedItemsAlertTv.setText(R.string.purchased_items_blank_alert_tv)
+        purchasedItemsAlertTv.visibility = VISIBLE
+      } else {
+        val name: String = nameEt.text.toString()
+        val totalValue: Float =
+          if (totalValueEt.text.isBlank()) 0F
+          else totalValueEt.text.toString().toFloat()
+        val purchasedItems: String = purchasedItemsEt.text.toString()
 
       return Person(null, name, totalValue, purchasedItems)
     }
