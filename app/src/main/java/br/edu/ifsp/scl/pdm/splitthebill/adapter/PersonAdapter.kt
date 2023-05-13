@@ -27,7 +27,6 @@ class PersonAdapter(context: Context, private val people: MutableList<Person>) :
 
       val tilePersonViewHolder = TilePersonViewHolder(
         tilePersonView.findViewById(R.id.nameTv),
-        tilePersonView.findViewById(R.id.productsTv),
         tilePersonView.findViewById(R.id.totalValueTv)
       )
 
@@ -45,7 +44,6 @@ class PersonAdapter(context: Context, private val people: MutableList<Person>) :
 
   private data class TilePersonViewHolder(
     val nameTv: TextView,
-    val productsTv: TextView,
     val totalValueTv: TextView
   )
 }
