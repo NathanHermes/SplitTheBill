@@ -10,6 +10,9 @@
 
     <string name="name_tv">Nome*</string>
     <string name="name_et">ex.: Pedro Nobile</string>
+    <string name="name_blank_alert_tv">Campo obrigatório.</string>
+    <string name="name_exists_alert_tv">Esse nome já existe, informe outro e tente novamente.</string>
+
     <string name="total_value_tv">Valor total</string>
     <string name="total_value_et">ex.: 190.00</string>
     <string name="purchased_items_tv">Itens comprados</string>
