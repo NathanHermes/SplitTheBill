@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.core.widget.addTextChangedListener
+import br.edu.ifsp.scl.pdm.splitthebill.R
 import br.edu.ifsp.scl.pdm.splitthebill.databinding.ActivityPersonBinding
 import br.edu.ifsp.scl.pdm.splitthebill.model.Person
 
@@ -46,6 +47,7 @@ class PersonActivity : BaseActivity() {
 
       purchasedItemsEt.setOnFocusChangeListener { _, hasFocus ->
         if (hasFocus && totalValueEt.text.isBlank()) {
+          purchasedItemsAlertTv.setText(R.string.purchased_items_alert_tv)
           purchasedItemsAlertTv.visibility = VISIBLE
           purchasedItemsEt.isEnabled = false
         }
@@ -54,7 +56,7 @@ class PersonActivity : BaseActivity() {
       backBt.setOnClickListener { finish() }
 
       saveBt.setOnClickListener {
-        val person: Person? = getValueFromView()
+        val person: Person? = getValueFromView(receivePerson?.id)
 
         if (person != null) {
           val resultIntent = Intent()
@@ -67,9 +69,10 @@ class PersonActivity : BaseActivity() {
     }
   }
 
-  private fun getValueFromView(): Person? {
+  private fun getValueFromView(id: Int?): Person? {
     with(activityPersonBinding) {
       if (nameEt.text.isBlank()) {
+        nameAlertTv.setText(R.string.name_blank_alert_tv)
         nameAlertTv.visibility = VISIBLE
         return null
       }
