@@ -110,6 +110,26 @@ class MainActivity : BaseActivity() {
     menuInflater.inflate(R.menu.context_menu_main, menu)
   }
 
+  override fun onContextItemSelected(item: MenuItem): Boolean {
+    val position = (item.menuInfo as AdapterView.AdapterContextMenuInfo).position
+    return when (item.itemId) {
+      R.id.editPersonMi -> {
+        val personIntent = Intent(this, PersonActivity::class.java)
+        personIntent.putExtra(EXTRA_PERSON, people[position])
+        personActivityResultLauncher.launch(personIntent)
+        true
+      }
+
+      R.id.deletePersonMi -> {
+        personController.deletePerson(people[position])
+        Toast.makeText(this, "Integrante removido", Toast.LENGTH_SHORT).show()
+        true
+      }
+
+      else -> false
+    }
+  }
+
   fun updatePeople(_people: MutableList<Person>) {
     people.clear()
     people.addAll(_people)
