@@ -64,6 +64,15 @@ class MainActivity : BaseActivity() {
         }
 
       registerForContextMenu(peopleLv)
+
+      peopleLv.onItemClickListener =
+        AdapterView.OnItemClickListener { _, _, position, _ ->
+          val person = people[position]
+          val personIntent = Intent(this@MainActivity, PersonActivity::class.java)
+          personIntent.putExtra(EXTRA_PERSON, person)
+          personIntent.putExtra(EXTRA_VIEW_PERSON, true)
+          personActivityResultLauncher.launch(personIntent)
+        }
     }
   }
 
