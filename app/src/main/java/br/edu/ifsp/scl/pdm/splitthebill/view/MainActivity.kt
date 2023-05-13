@@ -88,14 +88,4 @@ class MainActivity : BaseActivity() {
     people.addAll(_people)
     personAdapter.notifyDataSetChanged()
   }
-
-  /*private fun fillContactList() {
-    for (index: Int in 1..20) {
-      people.add(
-        Person(
-          index, "Name $index", 10F, "Itens: Alguma coisa"
-        )
-      )
-    }
-  }*/
 }
