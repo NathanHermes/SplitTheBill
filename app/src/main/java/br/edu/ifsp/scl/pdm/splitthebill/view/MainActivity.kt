@@ -54,7 +54,7 @@ class MainActivity : BaseActivity() {
                 Toast.makeText(this@MainActivity, "Integrante atualizado", Toast.LENGTH_LONG).show()
               } else {
                 personController.createPerson(_person)
-                Toast.makeText(this@MainActivity, "Integrante adicionado.", Toast.LENGTH_LONG)
+                Toast.makeText(this@MainActivity, "Integrante adicionado", Toast.LENGTH_LONG)
                   .show()
               }
 
