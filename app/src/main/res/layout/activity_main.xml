@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/zinc_50"
     android:padding="12dp"
-    tools:context=".view.MainActivity"
-    android:background="@color/zinc_50">
+    tools:context=".view.MainActivity">
 
     <LinearLayout
         android:id="@+id/pageTitleLl"
