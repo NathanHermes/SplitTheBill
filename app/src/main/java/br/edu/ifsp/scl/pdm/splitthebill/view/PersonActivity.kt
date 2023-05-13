@@ -1,6 +1,7 @@
 package br.edu.ifsp.scl.pdm.splitthebill.view
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
@@ -17,8 +18,15 @@ class PersonActivity : BaseActivity() {
     super.onCreate(savedInstanceState)
     setContentView(activityPersonBinding.root)
 
-    val people = intent.getParcelableExtra(EXTRA_PEOPLE)
-    Log.i("PEOPLE", people.toString())
+    val receivePerson =
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        intent.getParcelableExtra(EXTRA_PERSON, Person::class.java)
+      } else {
+        intent.getParcelableExtra(EXTRA_PERSON)
+      }
+    receivePerson?.let { _person ->
+      setValuesIntoView(_person)
+    }
 
     with(activityPersonBinding) {
       nameEt.addTextChangedListener { text ->
