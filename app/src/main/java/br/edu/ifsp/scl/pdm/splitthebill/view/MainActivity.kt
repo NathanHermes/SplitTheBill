@@ -93,7 +93,9 @@ class MainActivity : BaseActivity() {
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
     return when (item.itemId) {
       R.id.addPersonMi -> {
+        val peopleList = ArrayList<Person>(people)
         val personIntent = Intent(this, PersonActivity::class.java)
+        personIntent.putParcelableArrayListExtra(EXTRA_PEOPLE, peopleList)
         personActivityResultLauncher.launch(personIntent)
         true
       }
