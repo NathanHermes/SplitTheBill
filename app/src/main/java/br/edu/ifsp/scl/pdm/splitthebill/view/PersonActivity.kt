@@ -60,7 +60,7 @@ class PersonActivity : BaseActivity() {
 
         if (person != null) {
           val resultIntent = Intent()
-          resultIntent.putExtra(EXTRA_NEW_PERSON, person)
+          resultIntent.putExtra(EXTRA_PERSON, person)
 
           setResult(RESULT_OK, resultIntent)
           finish()
