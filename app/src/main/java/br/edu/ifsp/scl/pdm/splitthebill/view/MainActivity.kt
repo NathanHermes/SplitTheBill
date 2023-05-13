@@ -46,7 +46,7 @@ class MainActivity : BaseActivity() {
             }
 
             person?.let { _person ->
-              val positon = people.indexOfFirst { it.id == _person.id }
+              val position = people.indexOfFirst { it.id == _person.id }
 
               if (positon != -1) {
 
