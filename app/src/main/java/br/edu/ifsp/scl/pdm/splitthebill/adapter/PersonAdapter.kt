@@ -35,8 +35,9 @@ class PersonAdapter(context: Context, private val people: MutableList<Person>) :
 
     with(tilePersonView.tag as TilePersonViewHolder) {
       nameTv.text = person.name
-      productsTv.text = person.purchasedItems
-      totalValueTv.text = person.totalValue.toString()
+      val strongTotalValue = String.format("%.2f", person.value)
+      val refinedTotalValue = "R$$strongTotalValue"
+      totalValueTv.text = refinedTotalValue.replace(".", ",")
     }
 
     return tilePersonView
