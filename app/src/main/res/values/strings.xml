@@ -6,7 +6,9 @@
 
     <string name="menu_item_description">Adicionar integrante</string>
 
-    <string name="title_person">Cadastro de Integrante</string>
+    <string name="title_add_person">Cadastar integrante</string>
+    <string name="title_edit_person">Editar integrante</string>
+    <string name="title_show_person">Informações do integrante</string>
 
     <string name="name_tv">Nome*</string>
     <string name="name_et">ex.: Pedro Nobile</string>
