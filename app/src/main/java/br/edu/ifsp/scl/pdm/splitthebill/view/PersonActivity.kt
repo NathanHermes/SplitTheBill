@@ -3,6 +3,7 @@ package br.edu.ifsp.scl.pdm.splitthebill.view
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.core.widget.addTextChangedListener
@@ -70,7 +71,10 @@ class PersonActivity : BaseActivity() {
             _people.indexOfFirst { it.name == person.name }
           }
 
-          if (position != -1) {
+          if (receivePerson == null && position != -1) {
+            nameAlertTv.setText(R.string.name_exists_alert_tv)
+            nameAlertTv.visibility = VISIBLE
+          } else if (receivePerson != null && position != -1) {
             nameAlertTv.setText(R.string.name_exists_alert_tv)
             nameAlertTv.visibility = VISIBLE
           } else {
@@ -110,6 +114,7 @@ class PersonActivity : BaseActivity() {
     val viewPerson = intent.getBooleanExtra(EXTRA_VIEW_PERSON, false)
     with(activityPersonBinding) {
       if (viewPerson) {
+        titlePersonTv.setText(R.string.title_show_person)
         nameEt.hint = person.name
 
         val strongTotalValue = "R$${person.value.toString()}"
@@ -117,9 +122,11 @@ class PersonActivity : BaseActivity() {
 
         purchasedItemsEt.hint = person.items
       } else {
+        titlePersonTv.setText(R.string.title_edit_person)
+
         nameEt.setText(person.name)
 
-        if (person.value == null) {
+        if (person.value == null || person.value == 0F) {
           totalValueEt.setText("")
         } else {
           totalValueEt.setText(person.value.toString())
