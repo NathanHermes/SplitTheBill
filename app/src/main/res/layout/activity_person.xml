@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_black"
-        android:text="@string/title_person"
+        android:text="@string/title_add_person"
         android:textColor="@color/zinc_900"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
