@@ -116,8 +116,10 @@ class MainActivity : BaseActivity() {
     val position = (item.menuInfo as AdapterView.AdapterContextMenuInfo).position
     return when (item.itemId) {
       R.id.editPersonMi -> {
+        val peopleList = ArrayList<Person>(people)
         val personIntent = Intent(this, PersonActivity::class.java)
         personIntent.putExtra(EXTRA_PERSON, people[position])
+        personIntent.putParcelableArrayListExtra(EXTRA_PEOPLE, peopleList)
         personActivityResultLauncher.launch(personIntent)
         true
       }
