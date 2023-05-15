@@ -3,7 +3,6 @@ package br.edu.ifsp.scl.pdm.splitthebill.view
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.core.widget.addTextChangedListener
@@ -74,7 +73,7 @@ class PersonActivity : BaseActivity() {
           if (receivePerson == null && position != -1) {
             nameAlertTv.setText(R.string.name_exists_alert_tv)
             nameAlertTv.visibility = VISIBLE
-          } else if (receivePerson != null && position != -1) {
+          } else if (receivePerson != null && person.name != receivePerson.name && position != -1) {
             nameAlertTv.setText(R.string.name_exists_alert_tv)
             nameAlertTv.visibility = VISIBLE
           } else {
